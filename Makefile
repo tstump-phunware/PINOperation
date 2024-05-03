@@ -24,7 +24,7 @@ analyze: install_xcbeautify
 	rm -rf $(shell pwd)/clang
 	
 test: install_xcbeautify
-	xcodebuild clean test -destination ${PLATFORM} -sdk ${SDK} -project PINOperation.xcodeproj -scheme PINOperation \
+	xcodebuild clean test -destination ${PLATFORM} -sdk ${SDK} -project PINOperation.xcodeproj -scheme PINOperation -enableThreadSanitizer YES \
 	ONLY_ACTIVE_ARCH=NO \
 	CODE_SIGNING_REQUIRED=NO | xcbeautify
 
